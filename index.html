@@ -379,9 +379,6 @@
 
         // Block 1 - blob versus stripes
 
-        // Define break messages
-        var break_message_1 = "You have completed 25% of the trials. Please click 'Continue' when you are ready proceed.";
-
         for (j = 0; j < texture_order_1.length; j++) {
 
             var this_texture = textures[texture_order_1[j]];
@@ -413,33 +410,19 @@
             };
 
             timeline.push(rating_trial);
-
-
-            // Insert break halfway through the block 1 trials
-            if (j === Math.floor(trials_per_block / 2) - 1) {
-                var break_trial_1 = {
-                    type: jsPsychHtmlButtonResponse,
-                    stimulus: break_message_1,
-                    choices: ['Continue'],
-                };
-                timeline.push(break_trial_1);
-            }
         }
 
-        //Halfway - break 2
+        //break 1 - block 1 message
 
-        var break2 = {
+        var break1 = {
             type: jsPsychHtmlButtonResponse,
-            stimulus: "You have completed 50% of the trials. Please click 'Continue' when you are ready proceed.",
+            stimulus: "You have completed the first block of trials. Please click 'Continue' when you are ready proceed.",
             choices: ['Continue']
         };
 
-        timeline.push(break2);
+        timeline.push(break1);
 
         // Block 2 - round versus rectangle
-
-        // Define break messages
-        var break_message_3 = "You have completed 75% of the trials. Please click 'Continue' when you are ready proceed.";
 
         for (j = 0; j < texture_order_2.length; j++) {
 
@@ -472,25 +455,22 @@
             };
 
             timeline.push(rating_trial_check);
-
-
-            // Insert break halfway through the block 2 trials
-            if (j === Math.floor(trials_per_block / 2) - 1) {
-                var break_trial_3 = {
-                    type: jsPsychHtmlButtonResponse,
-                    stimulus: break_message_3,
-                    choices: ['Continue'],
-                };
-                timeline.push(break_trial_3);
-            }
         }
+
+
+        //break 2 - block 2 message
+
+        var break2 = {
+            type: jsPsychHtmlButtonResponse,
+            stimulus: "You have completed the second block of trials. Please click 'Continue' when you are ready proceed.",
+            choices: ['Continue']
+        };
+
+        timeline.push(break2);
 
 
         // Block 3 - course versus fine
 
-        // Define break messages
-        var break_message_1 = "You have completed 25% of the trials. Please click 'Continue' when you are ready proceed.";
-
         for (j = 0; j < texture_order_1.length; j++) {
 
             var this_texture = textures[texture_order_1[j]];
@@ -522,33 +502,19 @@
             };
 
             timeline.push(rating_trial);
-
-
-            // Insert break halfway through the block 1 trials
-            if (j === Math.floor(trials_per_block / 2) - 1) {
-                var break_trial_1 = {
-                    type: jsPsychHtmlButtonResponse,
-                    stimulus: break_message_1,
-                    choices: ['Continue'],
-                };
-                timeline.push(break_trial_1);
-            }
         }
 
-        //Halfway - break 2
+        //break 3 - block 3 message
 
-        var break2 = {
+        var break3 = {
             type: jsPsychHtmlButtonResponse,
-            stimulus: "You have completed 50% of the trials. Please click 'Continue' when you are ready proceed.",
+            stimulus: "You have completed the third block of trials. Please click 'Continue' when you are ready proceed.",
             choices: ['Continue']
         };
 
-        timeline.push(break2);
+        timeline.push(break3);
 
         // Block 4 - rough versus smooth
-
-        // Define break messages
-        var break_message_3 = "You have completed 75% of the trials. Please click 'Continue' when you are ready proceed.";
 
         for (j = 0; j < texture_order_2.length; j++) {
 
@@ -581,25 +547,21 @@
             };
 
             timeline.push(rating_trial_check);
-
-
-            // Insert break halfway through the block 2 trials
-            if (j === Math.floor(trials_per_block / 2) - 1) {
-                var break_trial_3 = {
-                    type: jsPsychHtmlButtonResponse,
-                    stimulus: break_message_3,
-                    choices: ['Continue'],
-                };
-                timeline.push(break_trial_3);
-            }
         }
+
+        //break 4 - block 4 message
+
+        var break4 = {
+            type: jsPsychHtmlButtonResponse,
+            stimulus: "You have completed the fourth block of trials. Please click 'Continue' when you are ready proceed.",
+            choices: ['Continue']
+        };
+
+        timeline.push(break4);
 
 
         // Block 5 - non-random versus random
 
-        // Define break messages
-        var break_message_1 = "You have completed 25% of the trials. Please click 'Continue' when you are ready proceed.";
-
         for (j = 0; j < texture_order_1.length; j++) {
 
             var this_texture = textures[texture_order_1[j]];
@@ -631,33 +593,19 @@
             };
 
             timeline.push(rating_trial);
-
-
-            // Insert break halfway through the block 1 trials
-            if (j === Math.floor(trials_per_block / 2) - 1) {
-                var break_trial_1 = {
-                    type: jsPsychHtmlButtonResponse,
-                    stimulus: break_message_1,
-                    choices: ['Continue'],
-                };
-                timeline.push(break_trial_1);
-            }
         }
 
-        //Halfway - break 2
+        //break 5 - block 5 message
 
-        var break2 = {
+        var break5 = {
             type: jsPsychHtmlButtonResponse,
-            stimulus: "You have completed 50% of the trials. Please click 'Continue' when you are ready proceed.",
+            stimulus: "You have completed the fifth block of trials. Please click 'Continue' when you are ready proceed.",
             choices: ['Continue']
         };
 
-        timeline.push(break2);
+        timeline.push(break5);
 
         // Block 6 - hard vs soft
-
-        // Define break messages
-        var break_message_3 = "You have completed 75% of the trials. Please click 'Continue' when you are ready proceed.";
 
         for (j = 0; j < texture_order_2.length; j++) {
 
@@ -690,18 +638,17 @@
             };
 
             timeline.push(rating_trial_check);
-
-
-            // Insert break halfway through the block 2 trials
-            if (j === Math.floor(trials_per_block / 2) - 1) {
-                var break_trial_3 = {
-                    type: jsPsychHtmlButtonResponse,
-                    stimulus: break_message_3,
-                    choices: ['Continue'],
-                };
-                timeline.push(break_trial_3);
-            }
         }
+
+        //break 6 - block 6 message
+
+        var break6 = {
+            type: jsPsychHtmlButtonResponse,
+            stimulus: "You have completed the sixth block of trials. Please click 'Continue' when you are ready proceed.",
+            choices: ['Continue']
+        };
+
+        timeline.push(break6);
 
 
         const save_data = {
