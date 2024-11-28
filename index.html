@@ -357,7 +357,7 @@
         //Dimensions
         //blob versus stripes
         //round versus rectangle
-        //course vs fine
+        //coarse vs fine
         //rough vs smooth
         //non-random vs random
         //hard vs soft
@@ -384,7 +384,7 @@
             var this_texture = textures[texture_order_1[j]];
             // Define concept based on current exemplar
             //var concept = affect_list[i];
-            var rating_trial = {
+            var rating_trial_blobby_stripy = {
                 type: jsPsychHtmlSliderResponse,
                 stimulus: `<div style="width:500px;">
                                 <p style="font-size:50px; font-weight:bold;"
@@ -393,7 +393,7 @@
                                     <img src="${this_texture}" style= "width:200px"alt="img">
                                 </div>
                             </div>`,
-                labels: ['Not at all <br> uniform', 'Very much <br> uniform'],
+                labels: ['Blobby', 'Stripy'],
                 slider_width: 500,
                 require_movement: false,
                 step: 1,
@@ -409,7 +409,7 @@
 
             };
 
-            timeline.push(rating_trial);
+            timeline.push(rating_trial_blobby_stripy);
         }
 
         //break 1 - block 1 message
@@ -429,7 +429,7 @@
             var this_texture = textures[texture_order_2[j]];
             // Define concept based on current exemplar
             //var concept = affect_list[i];
-            var rating_trial_check = {
+            var rating_trial_rounded_rectangular = {
                 type: jsPsychHtmlSliderResponse,
                 stimulus: `<div style="width:500px;">
                                 <p style="font-size:50px; font-weight:bold;"
@@ -438,7 +438,7 @@
                                     <img src="${this_texture}" style= "width:200px"alt="img">
                                 </div>
                             </div>`,
-                labels: ['Not at all <br> uniform', 'Very much <br> uniform'],
+                labels: ['Rounded', 'Rectangular'],
                 slider_width: 500,
                 require_movement: false,
                 step: 1,
@@ -454,7 +454,7 @@
 
             };
 
-            timeline.push(rating_trial_check);
+            timeline.push(rating_trial_rounded_rectangular);
         }
 
 
@@ -469,14 +469,14 @@
         timeline.push(break2);
 
 
-        // Block 3 - course versus fine
+        // Block 3 - coarse versus fine
 
         for (j = 0; j < texture_order_1.length; j++) {
 
             var this_texture = textures[texture_order_1[j]];
             // Define concept based on current exemplar
             //var concept = affect_list[i];
-            var rating_trial = {
+            var rating_trial_coarse_fine = {
                 type: jsPsychHtmlSliderResponse,
                 stimulus: `<div style="width:500px;">
                                 <p style="font-size:50px; font-weight:bold;"
@@ -485,7 +485,7 @@
                                     <img src="${this_texture}" style= "width:200px"alt="img">
                                 </div>
                             </div>`,
-                labels: ['Not at all <br> uniform', 'Very much <br> uniform'],
+                labels: ['Coarse', 'Fine'],
                 slider_width: 500,
                 require_movement: false,
                 step: 1,
@@ -501,7 +501,7 @@
 
             };
 
-            timeline.push(rating_trial);
+            timeline.push(rating_trial_coarse_fine);
         }
 
         //break 3 - block 3 message
@@ -521,7 +521,7 @@
             var this_texture = textures[texture_order_2[j]];
             // Define concept based on current exemplar
             //var concept = affect_list[i];
-            var rating_trial_check = {
+            var rating_trial_rough_smooth = {
                 type: jsPsychHtmlSliderResponse,
                 stimulus: `<div style="width:500px;">
                                 <p style="font-size:50px; font-weight:bold;"
@@ -530,7 +530,7 @@
                                     <img src="${this_texture}" style= "width:200px"alt="img">
                                 </div>
                             </div>`,
-                labels: ['Not at all <br> uniform', 'Very much <br> uniform'],
+                labels: ['Rough', 'Smooth'],
                 slider_width: 500,
                 require_movement: false,
                 step: 1,
@@ -546,7 +546,7 @@
 
             };
 
-            timeline.push(rating_trial_check);
+            timeline.push(rating_trial_rough_smooth);
         }
 
         //break 4 - block 4 message
@@ -567,7 +567,7 @@
             var this_texture = textures[texture_order_1[j]];
             // Define concept based on current exemplar
             //var concept = affect_list[i];
-            var rating_trial = {
+            var rating_trial_random_nonrandom = {
                 type: jsPsychHtmlSliderResponse,
                 stimulus: `<div style="width:500px;">
                                 <p style="font-size:50px; font-weight:bold;"
@@ -576,7 +576,7 @@
                                     <img src="${this_texture}" style= "width:200px"alt="img">
                                 </div>
                             </div>`,
-                labels: ['Not at all <br> uniform', 'Very much <br> uniform'],
+                labels: ['Random', 'Non-random'],
                 slider_width: 500,
                 require_movement: false,
                 step: 1,
@@ -592,7 +592,7 @@
 
             };
 
-            timeline.push(rating_trial);
+            timeline.push(rating_trial_random_nonrandom);
         }
 
         //break 5 - block 5 message
@@ -612,7 +612,7 @@
             var this_texture = textures[texture_order_2[j]];
             // Define concept based on current exemplar
             //var concept = affect_list[i];
-            var rating_trial_check = {
+            var rating_trial_hard_soft = {
                 type: jsPsychHtmlSliderResponse,
                 stimulus: `<div style="width:500px;">
                                 <p style="font-size:50px; font-weight:bold;"
@@ -621,7 +621,7 @@
                                     <img src="${this_texture}" style= "width:200px"alt="img">
                                 </div>
                             </div>`,
-                labels: ['Not at all <br> uniform', 'Very much <br> uniform'],
+                labels: ['Hard', 'Soft'],
                 slider_width: 500,
                 require_movement: false,
                 step: 1,
@@ -637,7 +637,7 @@
 
             };
 
-            timeline.push(rating_trial_check);
+            timeline.push(rating_trial_hard_soft);
         }
 
         //break 6 - block 6 message
