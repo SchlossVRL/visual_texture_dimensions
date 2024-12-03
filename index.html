@@ -305,7 +305,7 @@
                     if (last_resp_correct) {
                         return "<p align='center'><b>Good job!</b> Click on 'Continue' to proceed.</p>"
                     } else {
-                        return "<p align='center'><b>Not quite!</b> The slider was not placed near the instructed located. Click on 'Continue' to try again. </p>"
+                        return "<p align='center'><b>Not quite!</b> The slider was not placed near the instructed locattion. Click on 'Continue' to try again. </p>"
                     }
                 },
                 choices: ['Continue']
@@ -392,6 +392,7 @@
                 post_trial_gap: 500,
                 data: {
                     image_path: this_texture,
+                    slider_labels: ['Blobby', 'Stripey']
                     //concept: concept
                 }
 
@@ -445,6 +446,7 @@
                 post_trial_gap: 500,
                 data: {
                     image_path: this_texture,
+                    slider_labels: ['Rounded', 'Rectangular']
                     //concept: concept
                 }
 
@@ -499,6 +501,7 @@
                 post_trial_gap: 500,
                 data: {
                     image_path: this_texture,
+                    slider_labels: ['Coarse', 'Fine']
                     //concept: concept
                 }
 
@@ -552,6 +555,7 @@
                 post_trial_gap: 500,
                 data: {
                     image_path: this_texture,
+                    slider_labels: ['Rough', 'Smooth']
                     //concept: concept
                 }
 
@@ -606,6 +610,7 @@
                 post_trial_gap: 500,
                 data: {
                     image_path: this_texture,
+                    slider_labels: ['Random', 'Non-random']
                     //concept: concept
                 }
 
@@ -659,6 +664,7 @@
                 post_trial_gap: 500,
                 data: {
                     image_path: this_texture,
+                    slider_labels: ['Hard', 'Soft']
                     //concept: concept
                 }
 
