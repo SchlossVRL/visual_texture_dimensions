@@ -153,7 +153,7 @@
 
         //Dimension scales
         const scales = [
-            "<b>Blobby</b> versus <b>Stripy</b>",
+            "<b>Blobby</b> versus <b>Stripey</b>",
             "<b>Rounded</b> versus <b>Rectangular</b>",
             "<b>Coarse</b> versus <b>Fine</b>",
             "<b>Rough</b> versus <b>Smooth</b>",
@@ -164,7 +164,7 @@
         var instructions = {
             type: jsPsychHtmlSliderResponse,
             stimulus: `
-                <div style='text-align:left; height: auto; margin-left=-100px; margin-bottom: -20px; font-size:20px; line-height:5px; width: 1200px;'>
+                <div style='text-align:center; height: auto; margin-left=-100px; margin-bottom: -20px; font-size:20px; line-height:5px; width: 1200px;'>
                     <br>During this experiment, you will see a series of textures, one at a time, like the ones below: 
                 </div>
                     <br>
@@ -173,9 +173,9 @@
                 </div>
                 <div style="clear: both;"></div>
                 </div>
-                    <div style='text-align:left; margin-left=-100px; font-size:20px; line-height:10px; width: 1200px; margin-top: -50px;'>
+                    <div style='text-align:center; margin-left=-100px; font-size:20px; line-height:20px; width: 1200px; margin-top: -50px;'>
                     
-                    <br> For each texture, you will be asked to rate where you think it fall on each of the response scales with the following endpoints:
+                    <br> For each texture, you will be asked to rate where you think it falls on each of the response scales with the following endpoints:
                     </div>
                             <div style="text-align: center; width: 1400px; ">
                                 <p style="font-size:20px; line-height:5px; ">${scales[0]}</p>
@@ -185,13 +185,13 @@
                                 <p style="font-size:20px;line-height:5px; ">${scales[4]}</p>
                                 <p style="font-size:20px;line-height:5px;">${scales[5]}</p>
                             </div>
-                            <div style='text-align:left; font-size:20px; line-height:20px; width: 1400px;'>
+                            <div style='text-align:center; font-size:20px; line-height:20px; width: 1400px;'>
                     
                     Each trial will include one texture and one response scale. You will be asked to make your rating by sliding the cursor along a slider response scale like the one below.
                     <br><br> Before beginning, please look at the textures and scales. For each scale, think about the texture you associate most with the left endpoint. When you see that texture for that response scale, please click near the left of the scale.
                     <br><br> Now, please think about the texture you associate most with the right endpoint of each scale. When you see that texture for that response scale, please click near the right of the scale. 
-                    <br><br> Please use the full range of the scale. That is, if you believe a concept is somewhat associated with both endpoints, you would click at the midpoint of the scale.
-                    <br><br> You will be asked to rate each concept for a given scale before moving on to the next.
+                    <br><br> If you think a texture is not strongly associated with either endpoint of the scale, please click near the midpoint of the scale. Please use the full range of the scale. 
+                    <br><br> You will be asked to rate each texture for a given scale before moving on to the next scale.
                     <br><br> Please press the 'Continue' button for instructions on how to use the slider.\
                      <br><br>
                 `,
@@ -328,10 +328,18 @@
         var practice_complete = {
             type: jsPsychHtmlButtonResponse,
             stimulus: `<div style="width:800px; margin-top:-300px;"><p style="text-align:center; font-size:22px; line-height:25px;""> Great job! You've completed the practice trials.</div>
-                     <div style="width:800px; margin-top:-20px;"><p style="text-align:center"><br><br> In the following trials, you will be asked to rate textures on each scale one-by-one. <br> You will be given an oprtunities to take breaks when you have completed 25%, 50% and 75% of the trials. <br><br> Please click continue to begin the main task.<br><br><br> </div>`,
+                     <div style="width:800px; margin-top:-20px;"><p style="text-align:center"><br><br> In the following trials, you will be asked to rate textures on each scale one-by-one. <br> You will be given opportunities to take breaks when you have completed each block of trials. There are six total blocks of trials. <br><br> Please click continue to begin the main task.<br><br><br> </div>`,
             choices: ['Continue']
         };
         timeline.push(practice_complete);
+
+        var scale1 = {
+            type: jsPsychHtmlButtonResponse,
+            stimulus: "In the following trials, you will be asked to rate textures on the scale <b>Blobby</b> versus <b>Stripey</b>. Please click 'Continue' when you are ready proceed.",
+            choices: ['Continue']
+        };
+
+        timeline.push(scale1);
 
 
         //Dimensions
@@ -364,7 +372,7 @@
             var this_texture = textures[texture_order_1[j]];
             // Define concept based on current exemplar
             //var concept = affect_list[i];
-            var rating_trial_blobby_stripy = {
+            var rating_trial_blobby_stripey = {
                 type: jsPsychHtmlSliderResponse,
                 stimulus: `<div style="width:500px;">
                                 <p style="font-size:50px; font-weight:bold;"
@@ -373,7 +381,7 @@
                                     <img src="${this_texture}" style= "width:200px"alt="img">
                                 </div>
                             </div>`,
-                labels: ['Blobby', 'Stripy'],
+                labels: ['Blobby', 'Stripey'],
                 slider_width: 500,
                 require_movement: false,
                 step: 1,
@@ -389,20 +397,28 @@
 
             };
 
-            timeline.push(rating_trial_blobby_stripy);
+            timeline.push(rating_trial_blobby_stripey);
         }
 
         //break 1 - block 1 message
 
         var break1 = {
             type: jsPsychHtmlButtonResponse,
-            stimulus: "You have completed the first block of trials. Please click 'Continue' when you are ready proceed.",
+            stimulus: "You have completed the first block of trials out of six. Please click 'Continue' when you are ready proceed.",
             choices: ['Continue']
         };
 
         timeline.push(break1);
 
-        // Block 2 - round versus rectangle
+        var scale2 = {
+            type: jsPsychHtmlButtonResponse,
+            stimulus: "In the following trials, you will be asked to rate textures on the scale <b>Rounded</b> versus <b>Rectangular</b>. Please click 'Continue' when you are ready proceed.",
+            choices: ['Continue']
+        };
+
+        timeline.push(scale2);
+
+        // Block 2 - rounded versus rectangle
 
         for (j = 0; j < texture_order_2.length; j++) {
 
@@ -441,11 +457,19 @@
 
         var break2 = {
             type: jsPsychHtmlButtonResponse,
-            stimulus: "You have completed the second block of trials. Please click 'Continue' when you are ready proceed.",
+            stimulus: "You have completed the second block of trials out of six. Please click 'Continue' when you are ready proceed.",
             choices: ['Continue']
         };
 
         timeline.push(break2);
+
+        var scale3 = {
+            type: jsPsychHtmlButtonResponse,
+            stimulus: "In the following trials, you will be asked to rate textures on the scale <b>Coarse</b> versus <b>Fine</b>. Please click 'Continue' when you are ready proceed.",
+            choices: ['Continue']
+        };
+
+        timeline.push(scale3);
 
 
         // Block 3 - coarse versus fine
@@ -487,11 +511,19 @@
 
         var break3 = {
             type: jsPsychHtmlButtonResponse,
-            stimulus: "You have completed the third block of trials. Please click 'Continue' when you are ready proceed.",
+            stimulus: "You have completed the third block of trials out of six. Please click 'Continue' when you are ready proceed.",
             choices: ['Continue']
         };
 
         timeline.push(break3);
+
+        var scale4 = {
+            type: jsPsychHtmlButtonResponse,
+            stimulus: "In the following trials, you will be asked to rate textures on the scale <b>Rough</b> versus <b>Smooth</b>. Please click 'Continue' when you are ready proceed.",
+            choices: ['Continue']
+        };
+
+        timeline.push(scale4);
 
         // Block 4 - rough versus smooth
 
@@ -532,11 +564,19 @@
 
         var break4 = {
             type: jsPsychHtmlButtonResponse,
-            stimulus: "You have completed the fourth block of trials. Please click 'Continue' when you are ready proceed.",
+            stimulus: "You have completed the fourth block of trials out of six. Please click 'Continue' when you are ready proceed.",
             choices: ['Continue']
         };
 
         timeline.push(break4);
+
+        var scale5 = {
+            type: jsPsychHtmlButtonResponse,
+            stimulus: "In the following trials, you will be asked to rate textures on the scale <b>Random</b> versus <b>Non-Random</b>. Please click 'Continue' when you are ready proceed.",
+            choices: ['Continue']
+        };
+
+        timeline.push(scale5);
 
 
         // Block 5 - non-random versus random
@@ -578,11 +618,19 @@
 
         var break5 = {
             type: jsPsychHtmlButtonResponse,
-            stimulus: "You have completed the fifth block of trials. Please click 'Continue' when you are ready proceed.",
+            stimulus: "You have completed the fifth block of trials out of six. Please click 'Continue' when you are ready proceed.",
             choices: ['Continue']
         };
 
         timeline.push(break5);
+
+        var scale6 = {
+            type: jsPsychHtmlButtonResponse,
+            stimulus: "In the following trials, you will be asked to rate textures on the scale <b>Hard</b> versus <b>Soft</b>. Please click 'Continue' when you are ready proceed.",
+            choices: ['Continue']
+        };
+
+        timeline.push(scale6);
 
         // Block 6 - hard vs soft
 
@@ -651,7 +699,6 @@
             <div style='text-align:center; margin-left=-100px; font-size:20px; line-height:25px; width: 1200px;'>Great Job! You're done rating all textures!<br></br>
                 <br> The goal of this study is to understand how people form associations between visual textures and concepts.
                 <br> To do this, we need to collect data on how people describe textures.
-                <br> Please do not inform other potential participants of the hypotheses in our experiment.
                 <br> Please click 'Next' in order to receive credit through sona. <br><br> </div>`,
             choices: ['Next'],
         };
