@@ -644,8 +644,6 @@
             choices: ['Continue']
         };
 
-        timeline.push(break1);
-
         //break 2 - block 2 message
 
         var break2 = {
@@ -653,8 +651,6 @@
             stimulus: "You have completed the second block of trials out of six. Please click 'Continue' when you are ready proceed.",
             choices: ['Continue']
         };
-
-        timeline.push(break2);
 
         //break 3 - block 3 message
 
@@ -664,8 +660,6 @@
             choices: ['Continue']
         };
 
-        timeline.push(break3);
-
         //break 4 - block 4 message
 
         var break4 = {
@@ -673,8 +667,6 @@
             stimulus: "You have completed the fourth block of trials out of six. Please click 'Continue' when you are ready proceed.",
             choices: ['Continue']
         };
-
-        timeline.push(break4);
 
         //break 5 - block 5 message
 
@@ -684,14 +676,24 @@
             choices: ['Continue']
         };
 
-        timeline.push(break5);
+        //blocks
+        var trial_blocks = [blobby_stripey, rounded_rectangular, coarse_fine, rough_smooth, random_nonrandom, hard_soft];
 
-
+        var randomized_blocks = jsPsych.randomization.shuffle(trial_blocks);
 
         //pushing to timeline
+        timeline.push(...randomized_blocks[0]);
+        timeline.push(break1);
+        timeline.push(...randomized_blocks[1]);
+        timeline.push(break2);
+        timeline.push(...randomized_blocks[2]);
+        timeline.push(break3);
+        timeline.push(...randomized_blocks[3]);
+        timeline.push(break4);
+        timeline.push(...randomized_blocks[4]);
+        timeline.push(break5);
+        timeline.push(...randomized_blocks[5]);
 
-
-        var trial_blocks = [blobby_stripey, rounded_rectangular, coarse_fine, rough_smooth, random_nonrandom, hard_soft];
 
 
         //end trials
