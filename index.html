@@ -190,14 +190,7 @@
 
         timeline.push(uniformity);
 
-        //Dimensions
-        //blob versus stripes
-        //round versus rectangle
-        //coarse vs fine
-        //rough vs smooth
-        //non-random vs random
-        //hard vs soft
-
+        //Dimension scales
         const scales = [
             "<b>Blobby</b> versus <b>Stripy</b>",
             "<b>Rounded</b> versus <b>Rectangular</b>",
@@ -210,7 +203,7 @@
         var instructions = {
             type: jsPsychHtmlSliderResponse,
             stimulus: `
-                <div style='text-align:left; height: auto; margin-left=-100px; margin-bottom: -20px; font-size:20px; line-height:25px; width: 1200px;'>
+                <div style='text-align:left; height: auto; margin-left=-100px; margin-bottom: -20px; font-size:20px; line-height:5px; width: 1200px;'>
                     <br>During this experiment, you will see a series of textures, one at a time, like the ones below: 
                 </div>
                     <br>
@@ -219,30 +212,29 @@
                 </div>
                 <div style="clear: both;"></div>
                 </div>
-                    <div style='text-align:left; margin-left=-100px; font-size:20px; line-height:25px; width: 1200px; margin-top: -50px;'>
+                    <div style='text-align:left; margin-left=-100px; font-size:20px; line-height:10px; width: 1200px; margin-top: -50px;'>
                     
                     <br> For each texture, you will be asked to rate where you think it fall on each of the response scales with the following endpoints:
                     </div>
                             <div style="text-align: center; width: 1400px; ">
-                                <p style="font-size:20px; line-height:18px; ">${scales[0]}</p>
-                                <p style="font-size:20px; line-height:18px; ">${scales[1]}</p>
-                                <p style="font-size:20px;line-height:18px;">${scales[2]}</p>
-                                <p style="font-size:20px;line-height:18px; ">${scales[3]}</p>
-                                <p style="font-size:20px;line-height:18px; ">${scales[4]}</p>
-                                <p style="font-size:20px;line-height:22px;">${scales[5]}</p>
+                                <p style="font-size:20px; line-height:5px; ">${scales[0]}</p>
+                                <p style="font-size:20px; line-height:5px; ">${scales[1]}</p>
+                                <p style="font-size:20px;line-height:5px;">${scales[2]}</p>
+                                <p style="font-size:20px;line-height:5px; ">${scales[3]}</p>
+                                <p style="font-size:20px;line-height:5px; ">${scales[4]}</p>
+                                <p style="font-size:20px;line-height:5px;">${scales[5]}</p>
                             </div>
-                            <div style='text-align:left; font-size:20px; line-height:25px; width: 1400px;'>
+                            <div style='text-align:left; font-size:20px; line-height:20px; width: 1400px;'>
                     
                     Each trial will include one texture and one response scale. You will be asked to make your rating by sliding the cursor along a slider response scale like the one below.
-                    <br>Before beginning, please look at the list of concepts and scales.  For each scale, think about the concept you associate most with the left endpoint. When you see that concept for that response scale, please click near the left of the scale.
-                    <br>Now, please think about the concept you associate most with the right endpoint of each scale. When you see that concept for that response scale, please click near the right of the scale. Please use the full range of the scale. That is, if you believe a concept is somewhat associated with both endpoints, you would click at the midpoint of the scale.
-                    <br>You will be asked to rate each concept for a given scale before moving on to the next.<br>
-                    Please use the full range of the scale. That is, if an texture is somewhat uniform, you would
-                    click partway between the middle point and right side of the scale.\
-                    Please press the 'Continue' button for instructions on how to use the slider.\
+                    <br><br> Before beginning, please look at the textures and scales. For each scale, think about the texture you associate most with the left endpoint. When you see that texture for that response scale, please click near the left of the scale.
+                    <br><br> Now, please think about the texture you associate most with the right endpoint of each scale. When you see that texture for that response scale, please click near the right of the scale. 
+                    <br><br> Please use the full range of the scale. That is, if you believe a concept is somewhat associated with both endpoints, you would click at the midpoint of the scale.
+                    <br><br> You will be asked to rate each concept for a given scale before moving on to the next.
+                    <br><br> Please press the 'Continue' button for instructions on how to use the slider.\
                      <br><br>
                 `,
-            labels: ['Not at all <br> uniform', 'Very much <br> uniform'],
+            labels: ['Left Endpoint', 'Right Endpoint'],
             require_movement: false,
             step: 1,
             slider_start: 0,
@@ -296,7 +288,7 @@
 
                                 </div>
                             </div>`,
-                labels: ['Not at all <br> uniform', 'Very much <br> uniform'],
+                labels: ['Left Endpoint', 'Right Endpoint'],
                 // slider_width: 500,
                 require_movement: false,
                 step: 1,
@@ -681,7 +673,7 @@
         const save_data = {
             type: jsPsychPipe,
             action: "save",
-            experiment_id: "uiwSce8sNnbJ",
+            experiment_id: "wH9QxK2A9cXS",
             filename: filename,
             wait_message: 'Please wait a moment while the next page loads.',
             data_string: () => jsPsych.data.get().csv(),
