@@ -333,14 +333,6 @@
         };
         timeline.push(practice_complete);
 
-        var scale1 = {
-            type: jsPsychHtmlButtonResponse,
-            stimulus: "In the following trials, you will be asked to rate textures on the scale <b>Blobby</b> versus <b>Stripey</b>. Please click 'Continue' when you are ready proceed.",
-            choices: ['Continue']
-        };
-
-        timeline.push(scale1);
-
 
         //Dimensions
         //blob versus stripes
@@ -365,7 +357,17 @@
         // Define how many trials should be in each block
         var trials_per_block = Object.keys(textures).length;
 
-        // Block 1 - blob versus stripes
+        //blob versus stripes
+
+        var blobby_stripey = [];
+
+        var scale1 = {
+            type: jsPsychHtmlButtonResponse,
+            stimulus: "In the following trials, you will be asked to rate textures on the scale <b>Blobby</b> versus <b>Stripey</b>. Please click 'Continue' when you are ready proceed.",
+            choices: ['Continue']
+        };
+
+        blobby_stripey.push(scale1);
 
         for (j = 0; j < texture_order_1.length; j++) {
 
@@ -398,18 +400,12 @@
 
             };
 
-            timeline.push(rating_trial_blobby_stripey);
+            blobby_stripey.push(rating_trial_blobby_stripey);
         }
 
-        //break 1 - block 1 message
+        //rounded versus rectangle
 
-        var break1 = {
-            type: jsPsychHtmlButtonResponse,
-            stimulus: "You have completed the first block of trials out of six. Please click 'Continue' when you are ready proceed.",
-            choices: ['Continue']
-        };
-
-        timeline.push(break1);
+        var rounded_rectangular = [];
 
         var scale2 = {
             type: jsPsychHtmlButtonResponse,
@@ -417,9 +413,8 @@
             choices: ['Continue']
         };
 
-        timeline.push(scale2);
+        rounded_rectangular.push(scale2);
 
-        // Block 2 - rounded versus rectangle
 
         for (j = 0; j < texture_order_2.length; j++) {
 
@@ -452,18 +447,12 @@
 
             };
 
-            timeline.push(rating_trial_rounded_rectangular);
+            rounded_rectangular.push(rating_trial_rounded_rectangular);
         }
 
-        //break 2 - block 2 message
+        //coarse versus fine
 
-        var break2 = {
-            type: jsPsychHtmlButtonResponse,
-            stimulus: "You have completed the second block of trials out of six. Please click 'Continue' when you are ready proceed.",
-            choices: ['Continue']
-        };
-
-        timeline.push(break2);
+        var coarse_fine = [];
 
         var scale3 = {
             type: jsPsychHtmlButtonResponse,
@@ -471,10 +460,8 @@
             choices: ['Continue']
         };
 
-        timeline.push(scale3);
+        coarse_fine.push(scale3);
 
-
-        // Block 3 - coarse versus fine
 
         for (j = 0; j < texture_order_1.length; j++) {
 
@@ -507,18 +494,12 @@
 
             };
 
-            timeline.push(rating_trial_coarse_fine);
+            coarse_fine.push(rating_trial_coarse_fine);
         }
 
-        //break 3 - block 3 message
+        //rough versus smooth
 
-        var break3 = {
-            type: jsPsychHtmlButtonResponse,
-            stimulus: "You have completed the third block of trials out of six. Please click 'Continue' when you are ready proceed.",
-            choices: ['Continue']
-        };
-
-        timeline.push(break3);
+        var rough_smooth = [];
 
         var scale4 = {
             type: jsPsychHtmlButtonResponse,
@@ -526,9 +507,7 @@
             choices: ['Continue']
         };
 
-        timeline.push(scale4);
-
-        // Block 4 - rough versus smooth
+        rough_smooth.push(scale4);
 
         for (j = 0; j < texture_order_2.length; j++) {
 
@@ -561,18 +540,12 @@
 
             };
 
-            timeline.push(rating_trial_rough_smooth);
+            rough_smooth.push(rating_trial_rough_smooth);
         }
 
-        //break 4 - block 4 message
+        //random versus non-random
 
-        var break4 = {
-            type: jsPsychHtmlButtonResponse,
-            stimulus: "You have completed the fourth block of trials out of six. Please click 'Continue' when you are ready proceed.",
-            choices: ['Continue']
-        };
-
-        timeline.push(break4);
+        var random_nonrandom = [];
 
         var scale5 = {
             type: jsPsychHtmlButtonResponse,
@@ -580,10 +553,8 @@
             choices: ['Continue']
         };
 
-        timeline.push(scale5);
+        random_nonrandom.push(scale5);
 
-
-        // Block 5 - non-random versus random
 
         for (j = 0; j < texture_order_1.length; j++) {
 
@@ -616,18 +587,12 @@
 
             };
 
-            timeline.push(rating_trial_random_nonrandom);
+            random_nonrandom.push(rating_trial_random_nonrandom);
         }
 
-        //break 5 - block 5 message
+        //hard vs soft
 
-        var break5 = {
-            type: jsPsychHtmlButtonResponse,
-            stimulus: "You have completed the fifth block of trials out of six. Please click 'Continue' when you are ready proceed.",
-            choices: ['Continue']
-        };
-
-        timeline.push(break5);
+        var hard_soft = [];
 
         var scale6 = {
             type: jsPsychHtmlButtonResponse,
@@ -635,9 +600,7 @@
             choices: ['Continue']
         };
 
-        timeline.push(scale6);
-
-        // Block 6 - hard vs soft
+        hard_soft.push(scale6);
 
         for (j = 0; j < texture_order_2.length; j++) {
 
@@ -670,19 +633,68 @@
 
             };
 
-            timeline.push(rating_trial_hard_soft);
+            hard_soft.push(rating_trial_hard_soft);
         }
 
-        //break 6 - block 6 message
+        //break 1 - block 1 message
 
-        /* var break6 = {
+        var break1 = {
             type: jsPsychHtmlButtonResponse,
-            stimulus: "You have completed the sixth block of trials. Please click 'Continue' when you are ready proceed.",
+            stimulus: "You have completed the first block of trials out of six. Please click 'Continue' when you are ready proceed.",
             choices: ['Continue']
-        }; 
+        };
 
-        timeline.push(break6); */
+        timeline.push(break1);
 
+        //break 2 - block 2 message
+
+        var break2 = {
+            type: jsPsychHtmlButtonResponse,
+            stimulus: "You have completed the second block of trials out of six. Please click 'Continue' when you are ready proceed.",
+            choices: ['Continue']
+        };
+
+        timeline.push(break2);
+
+        //break 3 - block 3 message
+
+        var break3 = {
+            type: jsPsychHtmlButtonResponse,
+            stimulus: "You have completed the third block of trials out of six. Please click 'Continue' when you are ready proceed.",
+            choices: ['Continue']
+        };
+
+        timeline.push(break3);
+
+        //break 4 - block 4 message
+
+        var break4 = {
+            type: jsPsychHtmlButtonResponse,
+            stimulus: "You have completed the fourth block of trials out of six. Please click 'Continue' when you are ready proceed.",
+            choices: ['Continue']
+        };
+
+        timeline.push(break4);
+
+        //break 5 - block 5 message
+
+        var break5 = {
+            type: jsPsychHtmlButtonResponse,
+            stimulus: "You have completed the fifth block of trials out of six. Please click 'Continue' when you are ready proceed.",
+            choices: ['Continue']
+        };
+
+        timeline.push(break5);
+
+
+
+        //pushing to timeline
+
+
+        var trial_blocks = [blobby_stripey, rounded_rectangular, coarse_fine, rough_smooth, random_nonrandom, hard_soft];
+
+
+        //end trials
 
         const save_data = {
             type: jsPsychPipe,
