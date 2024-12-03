@@ -190,12 +190,28 @@
 
         timeline.push(uniformity);
 
+        //Dimensions
+        //blob versus stripes
+        //round versus rectangle
+        //coarse vs fine
+        //rough vs smooth
+        //non-random vs random
+        //hard vs soft
+
+        const scales = [
+            "<b>Blobby</b> versus <b>Stripy</b>",
+            "<b>Rounded</b> versus <b>Rectangular</b>",
+            "<b>Coarse</b> versus <b>Fine</b>",
+            "<b>Rough</b> versus <b>Smooth</b>",
+            "<b>Random</b> versus <b>Non-Random</b>",
+            "<b>Hard</b> versus <b>Soft</b>"
+        ]
 
         var instructions = {
             type: jsPsychHtmlSliderResponse,
             stimulus: `
                 <div style='text-align:left; height: auto; margin-left=-100px; margin-bottom: -20px; font-size:20px; line-height:25px; width: 1200px;'>
-                    <br>During this experiment, you will see a series of textures, one at a time, like the ones below. 
+                    <br>During this experiment, you will see a series of textures, one at a time, like the ones below: 
                 </div>
                     <br>
                     <br>
@@ -204,6 +220,19 @@
                 <div style="clear: both;"></div>
                 </div>
                     <div style='text-align:left; margin-left=-100px; font-size:20px; line-height:25px; width: 1200px; margin-top: -50px;'>
+                    
+                    <br> For each texture, you will be asked to rate where you think it fall on each of the response scales with the following endpoints:
+                    </div>
+                            <div style="text-align: center; width: 1400px; ">
+                                <p style="font-size:25px; line-height:18px; ">${scales[0]}</p>
+                                <p style="font-size:25px; line-height:18px; ">${scales[1]}</p>
+                                <p style="font-size:25px;line-height:18px;">${scales[2]}</p>
+                                <p style="font-size:25px;line-height:18px; ">${scales[3]}</p>
+                                <p style="font-size:25px;line-height:18px; ">${scales[4]}</p>
+                                <p style="font-size:25px;line-height:22px;">${scales[5]}</p>
+                            </div>
+                            <div style='text-align:left; font-size:20px; line-height:25px; width: 1400px;'>
+                    
                     <br> Your task is to rate how uniform the texture appears on a scale from 'not at all uniform' to 'very much uniform,' like the one below.
                     <br><br> So you know what 'very much uniform' and 'not at all uniform' means to you in the context of these textures, please think about which textures below you consider 'very much uniform,' and which textures below you consider 'not at all uniform.'
                     <br><br>When you see a texture during the experiment that you consider 'very much uniform', please rate it near the 'very much uniform' endpoint of the
