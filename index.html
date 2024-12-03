@@ -217,7 +217,7 @@
         var slider_instructions = {
             type: jsPsychHtmlButtonResponse,
             stimulus: `<div style="width:1200px; margin-top:-150px;"><p style="text-align:center; font-size:24px;">To move the slider, click and drag your cursor to the location of the scale where you would like to make your rating and then let go. <br><br> When you let go of the slider, your response will be recorded and the next trial will begin. <br><br><br>
-                We are interested in your initial impressions of each image's uniformity, so please go with your first intuition. <br><br>
+                We are interested in your initial impressions of each texture and scale, so please go with your first intuition. <br><br>
                 Before you begin the experiment, there will be four training trials for you to practice using the scale. <br><br><br><br></div>
                 <div style="width:1200px;"><p style="text-align:center; font-size:20px;">When you are ready to start the training trials, please click "Continue".</p></div>`,
             choices: ['Continue']
@@ -328,7 +328,7 @@
         var practice_complete = {
             type: jsPsychHtmlButtonResponse,
             stimulus: `<div style="width:800px; margin-top:-300px;"><p style="text-align:center; font-size:22px; line-height:25px;""> Great job! You've completed the practice trials.</div>
-                     <div style="width:800px; margin-top:-20px;"><p style="text-align:center"><br><br> In the following trials, you will be asked to rate images on their uniformity one-by-one. <br> You will be given an oprtunities to take breaks when you have completed 25%, 50% and 75% of the trials. <br><br> Please click continue to begin the main task.<br><br><br> </div>`,
+                     <div style="width:800px; margin-top:-20px;"><p style="text-align:center"><br><br> In the following trials, you will be asked to rate textures on each scale one-by-one. <br> You will be given an oprtunities to take breaks when you have completed 25%, 50% and 75% of the trials. <br><br> Please click continue to begin the main task.<br><br><br> </div>`,
             choices: ['Continue']
         };
         timeline.push(practice_complete);
@@ -650,7 +650,7 @@
             stimulus: `
             <div style='text-align:center; margin-left=-100px; font-size:20px; line-height:25px; width: 1200px;'>Great Job! You're done rating all textures!<br></br>
                 <br> The goal of this study is to understand how people form associations between visual textures and concepts.
-                <br> To do this, we need to collect data on how people view the uniformity of textures.
+                <br> To do this, we need to collect data on how people describe textures.
                 <br> Please do not inform other potential participants of the hypotheses in our experiment.
                 <br> Please click 'Next' in order to receive credit through sona. <br><br> </div>`,
             choices: ['Next'],
