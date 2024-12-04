@@ -153,12 +153,12 @@
 
         //Dimension scales
         const scales = [
-            "<b>Blobby</b> versus <b>Stripey</b>",
-            "<b>Rounded</b> versus <b>Rectangular</b>",
-            "<b>Coarse</b> versus <b>Fine</b>",
-            "<b>Rough</b> versus <b>Smooth</b>",
-            "<b>Random</b> versus <b>Non-Random</b>",
-            "<b>Hard</b> versus <b>Soft</b>"
+            "<b>Stripey</b> versus <b>Blobby</b>",
+            "<b>Rectangular</b> versus <b>Rounded</b>",
+            "<b>Fine</b> versus <b>Coarse</b>",
+            "<b>Smooth</b> versus <b>Rough</b>",
+            "<b>Non-Random</b> versus <b>Random</b>",
+            "<b>Soft</b> versus <b>Hard</b>"
         ]
 
         var instructions = {
@@ -363,7 +363,7 @@
 
         var scale1 = {
             type: jsPsychHtmlButtonResponse,
-            stimulus: "In the following trials, you will be asked to rate textures on the scale <b>Blobby</b> versus <b>Stripey</b>. Please click 'Continue' when you are ready proceed.",
+            stimulus: "In the following trials, you will be asked to rate textures on the scale <b>Stripey</b> versus <b>Blobby</b>. Please click 'Continue' when you are ready proceed.",
             choices: ['Continue']
         };
 
@@ -383,7 +383,7 @@
                                     <img src="${this_texture}" style= "width:200px"alt="img">
                                 </div>
                             </div>`,
-                labels: ['Blobby', 'Stripey'],
+                labels: ['Stripey', 'Blobby'],
                 slider_width: 500,
                 require_movement: false,
                 step: 1,
@@ -394,7 +394,7 @@
                 post_trial_gap: 500,
                 data: {
                     image_path: this_texture,
-                    slider_labels: ['Blobby', 'Stripey']
+                    slider_labels: ['Stripey', 'Blobby']
                     //concept: concept
                 }
 
@@ -409,7 +409,7 @@
 
         var scale2 = {
             type: jsPsychHtmlButtonResponse,
-            stimulus: "In the following trials, you will be asked to rate textures on the scale <b>Rounded</b> versus <b>Rectangular</b>. Please click 'Continue' when you are ready proceed.",
+            stimulus: "In the following trials, you will be asked to rate textures on the scale <b>Rectangular</b> versus <b>Rounded</b>. Please click 'Continue' when you are ready proceed.",
             choices: ['Continue']
         };
 
@@ -430,7 +430,7 @@
                                     <img src="${this_texture}" style= "width:200px"alt="img">
                                 </div>
                             </div>`,
-                labels: ['Rounded', 'Rectangular'],
+                labels: ['Rectangular', 'Rounded'],
                 slider_width: 500,
                 require_movement: false,
                 step: 1,
@@ -441,7 +441,7 @@
                 post_trial_gap: 500,
                 data: {
                     image_path: this_texture,
-                    slider_labels: ['Rounded', 'Rectangular']
+                    slider_labels: ['Rectangular', 'Rounded']
                     //concept: concept
                 }
 
@@ -456,7 +456,7 @@
 
         var scale3 = {
             type: jsPsychHtmlButtonResponse,
-            stimulus: "In the following trials, you will be asked to rate textures on the scale <b>Coarse</b> versus <b>Fine</b>. Please click 'Continue' when you are ready proceed.",
+            stimulus: "In the following trials, you will be asked to rate textures on the scale <b>Fine</b> versus <b>Coarse</b>. Please click 'Continue' when you are ready proceed.",
             choices: ['Continue']
         };
 
@@ -477,7 +477,7 @@
                                     <img src="${this_texture}" style= "width:200px"alt="img">
                                 </div>
                             </div>`,
-                labels: ['Coarse', 'Fine'],
+                labels: ['Fine', 'Coarse'],
                 slider_width: 500,
                 require_movement: false,
                 step: 1,
@@ -488,7 +488,7 @@
                 post_trial_gap: 500,
                 data: {
                     image_path: this_texture,
-                    slider_labels: ['Coarse', 'Fine']
+                    slider_labels: ['Fine', 'Coarse']
                     //concept: concept
                 }
 
@@ -503,7 +503,7 @@
 
         var scale4 = {
             type: jsPsychHtmlButtonResponse,
-            stimulus: "In the following trials, you will be asked to rate textures on the scale <b>Rough</b> versus <b>Smooth</b>. Please click 'Continue' when you are ready proceed.",
+            stimulus: "In the following trials, you will be asked to rate textures on the scale <b>Smooth</b> versus <b>Rough</b>. Please click 'Continue' when you are ready proceed.",
             choices: ['Continue']
         };
 
@@ -523,7 +523,7 @@
                                     <img src="${this_texture}" style= "width:200px"alt="img">
                                 </div>
                             </div>`,
-                labels: ['Rough', 'Smooth'],
+                labels: ['Smooth', 'Rough'],
                 slider_width: 500,
                 require_movement: false,
                 step: 1,
@@ -534,7 +534,7 @@
                 post_trial_gap: 500,
                 data: {
                     image_path: this_texture,
-                    slider_labels: ['Rough', 'Smooth']
+                    slider_labels: ['Smooth', 'Rough']
                     //concept: concept
                 }
 
@@ -549,7 +549,7 @@
 
         var scale5 = {
             type: jsPsychHtmlButtonResponse,
-            stimulus: "In the following trials, you will be asked to rate textures on the scale <b>Random</b> versus <b>Non-Random</b>. Please click 'Continue' when you are ready proceed.",
+            stimulus: "In the following trials, you will be asked to rate textures on the scale <b>Non-Random</b> versus <b>Random</b>. Please click 'Continue' when you are ready proceed.",
             choices: ['Continue']
         };
 
@@ -570,7 +570,7 @@
                                     <img src="${this_texture}" style= "width:200px"alt="img">
                                 </div>
                             </div>`,
-                labels: ['Random', 'Non-random'],
+                labels: ['Non-random', 'Random'],
                 slider_width: 500,
                 require_movement: false,
                 step: 1,
@@ -581,7 +581,7 @@
                 post_trial_gap: 500,
                 data: {
                     image_path: this_texture,
-                    slider_labels: ['Random', 'Non-random']
+                    slider_labels: ['Non-random', 'Random']
                     //concept: concept
                 }
 
@@ -596,7 +596,7 @@
 
         var scale6 = {
             type: jsPsychHtmlButtonResponse,
-            stimulus: "In the following trials, you will be asked to rate textures on the scale <b>Hard</b> versus <b>Soft</b>. Please click 'Continue' when you are ready proceed.",
+            stimulus: "In the following trials, you will be asked to rate textures on the scale <b>Soft</b> versus <b>Hard</b>. Please click 'Continue' when you are ready proceed.",
             choices: ['Continue']
         };
 
