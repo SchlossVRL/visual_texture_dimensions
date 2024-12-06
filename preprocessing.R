@@ -8,7 +8,7 @@ library(tidyverse)
 library(ggplot2)
 library(skimr)
 
-path <- "Data/Data1"
+path <- "Data"
 
 #list of files
 file_list <- list.files(path = path, pattern = "\\.csv$", full.names = TRUE)

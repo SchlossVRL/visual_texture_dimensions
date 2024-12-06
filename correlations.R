@@ -78,7 +78,7 @@ ggplot(cor_matrix_long, aes(x = Var1, y = Var2, fill = value)) +
   geom_tile() + 
   scale_fill_gradient2(low = "blue", high = "red", mid = "white", midpoint = 0, limit = c(-1, 1), name = "Correlation") +
   theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1),
+  theme(axis.text.x = element_text(angle = 0, hjust = 1, vjust = 1),
         axis.text.y = element_text(angle = 0, hjust = 1)) +
   labs(title = "Correlation Heatmap", x = "Scale", y = "Scale")
 
@@ -114,3 +114,25 @@ ggplot(correlations_melted, aes(x = PCA_Component, y = scale, fill = Correlation
 #        y = "Correlation",
 #        fill = "PCA Component") +
 #   theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+# Calculate correlations and p-values for PCA components and avg_rating
+correlations2 <- data %>%
+  group_by(scale) %>%
+  summarise(
+    cor_PC1 = cor(PC1, avg_rating, use = "complete.obs"),
+    cor_PC2 = cor(PC2, avg_rating, use = "complete.obs"),
+    cor_PC3 = cor(PC3, avg_rating, use = "complete.obs"),
+    p_PC1 = cor.test(PC1, avg_rating)$p.value,
+    p_PC2 = cor.test(PC2, avg_rating)$p.value,
+    p_PC3 = cor.test(PC3, avg_rating)$p.value
+  )
+
+# Pivot data for correlation matrix
+reshaped_data2 <- data %>%
+  pivot_wider(names_from = scale, values_from = avg_rating)
+
+# Remove unnecessary columns
+data_for_corr2 <- reshaped_data2 %>%
+  select(-subject_id, -response, -image_path, -images, -RescaledResponse, -PC1, -PC2, -PC3) %>%
+  drop_na()  # Remove rows with any NA values
+correlations2
